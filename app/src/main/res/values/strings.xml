@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Face changer</string>
+    <string-array name="styles">
+        <item>Bald</item>
+        <item>Mow hawk</item>
+        <item>Bowl cut</item>
+    </string-array>
+</resources>
