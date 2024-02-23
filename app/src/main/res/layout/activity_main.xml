@@ -4,36 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
+    <com.example.facechanger.FaceView
+        android:id="@+id/faceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="10"
             android:orientation="horizontal"
             android:padding="20dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:padding="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Red"
-
-                />
+                android:text="Red" />
 
             <SeekBar
                 android:id="@+id/Red"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:max="255"
                 android:progress="0" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:orientation="horizontal"
-            android:padding="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -48,14 +49,7 @@
                 android:layout_height="wrap_content"
                 android:max="255"
                 android:progress="0" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:orientation="horizontal"
-            android:padding="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -73,11 +67,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -88,31 +86,36 @@
 
             <Spinner
                 android:id="@+id/style"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:entries="@array/styles"/>
         </LinearLayout>
+        </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="10"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_weight="1"
+        android:orientation="vertical">
             <RadioGroup
+                android:id="@+id/radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <RadioButton
+                    android:id="@+id/hairB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hair"/>
                 <RadioButton
+                    android:id="@+id/eyesB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Eyes"/>
                 <RadioButton
+                    android:id="@+id/skinB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Skin"/>
+                    android:text="Skin"
+                    android:checked="true"/>
                     </RadioGroup>
 
         </LinearLayout>
@@ -129,3 +132,4 @@
             />
     </LinearLayout>
     </LinearLayout>
+</LinearLayout>
