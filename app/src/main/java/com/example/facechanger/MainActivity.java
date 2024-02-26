@@ -16,20 +16,26 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle SIS) {
         super.onCreate(SIS);
-        FaceController Controler = new FaceController(this);
         setContentView(R.layout.activity_main);
         defaultFV = findViewById(R.id.faceview);
+        FaceController Controler = new FaceController(this);
+        SeekBar Red = findViewById(R.id.Red);
+        SeekBar Green = findViewById(R.id.Green);
+        SeekBar Blue = findViewById(R.id.Blue);
+
         Spinner styles = findViewById(R.id.style);
         RadioGroup facial = findViewById(R.id.radio);
         facial.setOnCheckedChangeListener(Controler);
         Button random = findViewById(R.id.button);
         random.setOnClickListener(Controler);
-        SeekBar Red = findViewById(R.id.Red);
         Red.setOnSeekBarChangeListener(Controler);
-        SeekBar Green = findViewById(R.id.Green);
         Green.setOnSeekBarChangeListener(Controler);
-        SeekBar Blue = findViewById(R.id.Blue);
         Blue.setOnSeekBarChangeListener(Controler);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+          this, R.array.styles, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        styles.setAdapter(adapter);
+        styles.setOnItemSelectedListener(Controler);
 
     }
 }

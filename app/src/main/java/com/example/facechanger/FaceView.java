@@ -21,7 +21,7 @@ public class FaceView extends SurfaceView {
     public int facial;
     private Random rand;
     public final float Left = 800;
-    public final float Top = 200f;
+    public final float Top = 100f;
     public final float Width = 600f;
     public final float Height = 600f;
 
@@ -61,27 +61,27 @@ public class FaceView extends SurfaceView {
     public void drawHair(Canvas c){
         // draw bald
     if (hairStyle == 0){
-        c.drawRect(Left+7*(Width/50),Top+(Height/20),Left+8*(Width/50),
+        c.drawRect(Left+20*(Width/50),Top+(Height/20),Left+21*(Width/50),
                 Top+4*(Height/20),hairPaint);
-        c.drawRect(Left+40*(Width/50),Top+(Height/20),Left+41*(Width/50),
+        c.drawRect(Left+35*(Width/50),Top+(Height/20),Left+36*(Width/50),
                 Top+4*(Height/20),hairPaint);
     }
     if (hairStyle == 1){
-        c.drawArc(Left,Top,Left+Width,Top+(Height/4),180,
+        c.drawArc(Left,Top,Left+Width,Top+(Height/2),180,
                 180,true,hairPaint);
     }
     if (hairStyle == 2){
         Path mowhawk = new Path();
-        mowhawk.moveTo(Left+(Width/2),Top-50f);
-        mowhawk.lineTo(Left+2*(Width/5),Top+50f);
-        mowhawk.lineTo(Left+3*(Width/5),Top+50f);
+        mowhawk.moveTo(Left+(Width/2),Top-80f);
+        mowhawk.lineTo(Left+2*(Width/7),Top+200f);
+        mowhawk.lineTo(Left+5*(Width/7),Top+200f);
         c.drawPath(mowhawk, hairPaint);
     }
     }
     // draws the eyes
     public void drawEyes(Canvas c){
-    c.drawOval(Left+Width/4,Top+Height/4,Left+Width/3,Top+Height/3,eyesPaint);
-    c.drawOval(Left+2*(Width/3),Top+Height/4,Left+Width/3,Top+3*(Height/4),eyesPaint);
+    c.drawOval(Left+Width/4,Top+Height/2,Left+Width/3,Top+(2*Height/3),eyesPaint);
+    c.drawOval(Left+(2*Width/3),Top+Height/2,Left+(3*Width/4),Top+(2*Height/3),eyesPaint);
 
     }
     // draws the head just the skin part
